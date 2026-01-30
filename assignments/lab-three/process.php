@@ -48,6 +48,17 @@
             exit; // stop the script so the success message doesn't show
         }
         ?>
+        <!-- if no errors, show the confirmation message -->
+        <h2>Thank you, <?php echo $first_name; ?>!</h2>
+        <p>Your message has been received.</p>
+
+        <h3>Your Submission</h3>
+        <ul>
+            <li>First Name: <?php echo $first_name; ?></li>
+            <li>Last Name: <?php echo $last_name; ?></li>
+            <li>Email: <?php echo $email; ?></li>
+            <li>Message: <?php echo $message; ?></li>
+        </ul>
         
     </body>
 </html>
