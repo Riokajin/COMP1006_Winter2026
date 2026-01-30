@@ -36,6 +36,17 @@
         if ($message === null || $message === '') {
             $errors[] = "Message is required.";
         }
+
+        //check for errors
+
+        if (!empty($errors)) {
+            echo "<ul>";
+            foreach($errors as $error) {
+                echo "<li>$error</li>";
+            }
+            echo "</ul>";
+            exit; // stop the script so the success message doesn't show
+        }
         ?>
         
     </body>
