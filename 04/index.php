@@ -7,15 +7,15 @@
     <fieldset>
       <legend>Customer Information</legend>
         <label for="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name" required>
+        <input type="text" id="first_name" name="first_name" >
         <label for="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name" required>
+        <input type="text" id="last_name" name="last_name" >
         <label for="phone">Phone number</label>
-        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" required>
+        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" >
         <label for="address">Address</label>
-        <input type="text" id="address" name="address" required>
+        <input type="text" id="address" name="address" >
         <label for="email">Email Address</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email" >
     </fieldset>
 
     <!-- Order Details -->
