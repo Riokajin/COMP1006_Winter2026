@@ -20,8 +20,13 @@
 
             <br><br>
 
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <br><br>
+
             <label for="message">Message</label><br>
-            <textarea id="message" required></textarea>
+            <textarea id="message" name ="message" required></textarea>
 
             <br><br>
 
