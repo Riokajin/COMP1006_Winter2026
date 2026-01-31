@@ -47,6 +47,7 @@
             echo "</ul>";
             exit; // stop the script so the success message doesn't show
         }
+        // mail($to, $subject, $message);
         ?>
         <!-- if no errors, show the confirmation message -->
         <h2>Thank you, <?php echo $first_name; ?>!</h2>
