@@ -1,4 +1,4 @@
-<?php 
+<?php
 $host = "localhost"; //hostname
 $db = "bitumi"; //database name
 $user = "root"; //username
@@ -9,10 +9,10 @@ $dsn = "mysql:host=$host;dbname=$db";
 
 //try to connect, if connected echo a yay!
 try {
-   $pdo = new PDO ($dsn, $user, $password); 
+   $pdo = new PDO ($dsn, $user, $password);
    $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 }
-//what happens if there is an error connecting 
+//what happens if there is an error connecting
 catch(PDOException $e) {
-    die("Database connection failed: " . $e->getMessage()); 
+    die("Database connection failed: " . $e->getMessage());
 }
