@@ -22,7 +22,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <form action="update.php" method="POST">
 
-            <input type="hidden" name="id" value="<php echo $post[id]; ?>">
+            <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 
             <label>Title:</label><br>
             <input type ="text" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required><br><br>
