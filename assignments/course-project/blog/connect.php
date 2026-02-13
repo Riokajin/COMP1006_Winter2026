@@ -1,5 +1,7 @@
 <?php
 
+include 'header.php';
+
 $host = 'localhost';
 $dbname = 'blog_cms';
 $username = 'root';
@@ -12,5 +14,5 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-
+include 'footer.php';
 ?>
