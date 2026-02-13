@@ -1,7 +1,5 @@
 <?php
 
-include 'header.php';
-
 $host = 'localhost';
 $dbname = 'blog_cms';
 $username = 'root';
@@ -13,6 +11,4 @@ try {
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }
-
-include 'footer.php';
 ?>
