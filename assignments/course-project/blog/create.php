@@ -1,22 +1,37 @@
 <?php
+// Connect to the database and load the header
 include 'connect.php';
 include 'header.php';
 ?>
-<h1>Create a New Blog Post</h1>
+<h1 class="mb-4">Create a New Blog Post</h1>
 
-<form action="store.php" method="POST">
-    <label>Title:</label><br>
-    <input type="text" name="title" required><br><br>
+<form action="store.php" method="POST" class="mb-5">
 
-    <label>Date:</label><br>
-    <input type="date" name="date" required><br><br>
+    <div class="mb-3">
+        <label class="form-label">Title:</label>
+        <input type="text" name="title" class="form-control" required>
+    </div>
 
-    <label>Body:</label><br>
-    <textarea name="body" rows="10" cols="50" required></textarea><br><br>
+    <div class="mb-3">
+        <label class="form-label">Date:</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
 
-    <label>Category:</label><br>
-    <input type="text" name="category" required><br><br>
+    <div class="mb-3">
+        <label class="form-label">Body:</label>
+        <textarea name="body" rows="10" cols="50" class="form-control" required></textarea>
+    </div>
 
-    <button type="submit">Save Post</button>
+    <div class="mb-3">
+        <label class="form-label">Category:</label>
+        <input type="text" name="category" class="form-control" required>
+    </div>
+
+    <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
+
+    <button type="submit" class="btn btn-success">Save Post</button>
 </form>
-<?php include 'footer.php'; ?>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<?php require 'footer.php'; ?>
