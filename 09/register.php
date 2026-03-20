@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
 
         // SQL query to check for existing username or email
-       $sql = "SELECT id FROM users WHERE username = :username OR email = :email";
+        $sql = "SELECT id FROM users WHERE username = :username OR email = :email";
 
         // Prepare the SQL statement using PDO
         $stmt = $pdo->prepare($sql);
@@ -80,14 +80,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Bind user inputs to the query parameters
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
-   
 
         // Execute the query
         $stmt->execute();
 
         // If a record is returned, the username or email is already in use
         if ($stmt->fetch()) {
-            $errors[] = "That username or email is already in use.";
+            $errors[] = "That username or email has already been used!";
         }
     }
     // --------------------------------------------------
@@ -100,21 +99,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // This ensures passwords are not stored in plain text
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         // SQL query to insert the new user
-        $sql = "INSERT INTO users (username, email, password) VALUES (:password, :email. :password)";
-
+        $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
         // Prepare the insert statement
-       $stmt = $pso->prepare($sql);
+        $stmt = $pdo->prepare($sql);
 
         // Bind the values to the query parameters
-       $stmt->bindParam(':username', $username);
-       $stmt->bindParam(':email', $email);
-       $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $hashedPassword);
 
         // Execute the insert query
-        $stmt->execute();
-
+        $stmt->execute(); 
         // Set a success message
-        
+        $success = "Account create successfully. You can now login!"; 
     }
 }
 ?>
@@ -156,8 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="username"
             class="form-control mb-3"
             value="<?= htmlspecialchars($username ?? ''); ?>"
-            required
-        >
+            required>
 
         <!-- Email input -->
         <label for="email" class="form-label">Email</label>
@@ -167,8 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="email"
             class="form-control mb-3"
             value="<?= htmlspecialchars($email ?? ''); ?>"
-            required
-        >
+            required>
 
         <!-- Password input -->
         <label for="password" class="form-label">Password</label>
@@ -177,8 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             id="password"
             name="password"
             class="form-control mb-3"
-            required
-        >
+            required>
 
         <!-- Confirm password input -->
         <label for="confirm_password" class="form-label">Confirm Password</label>
@@ -187,8 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             id="confirm_password"
             name="confirm_password"
             class="form-control mb-4"
-            required
-        >
+            required>
 
         <!-- Submit button -->
         <button type="submit" class="btn btn-primary">Create Account</button>
