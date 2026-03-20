@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //only allow a few file types
             $allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg'];
             // detect the real MIME type of the file
-            $detectedType = mime_content_type($_FILES['product_name']['tmp_name']);
+            $detectedType = mime_content_type($_FILES['product_image']['tmp_name']);
             if(!in_array($detectedType, $allowedTypes, true)) {
                 $errors[] = "Only JPG/JPEG, PNG, and WebP allowed";
             } else {
