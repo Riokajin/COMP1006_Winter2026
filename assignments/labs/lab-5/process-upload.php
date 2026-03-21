@@ -40,7 +40,7 @@ if(isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === 0) {
         <!-- If the file exists, display it -->
         <?php if(isset($destination) && file_exists($destination)) : ?>
             <p>Your uploaded image:</p>
-            img src="<?php echo $destination; ?>" width="300">
+            <img src="<?php echo $destination; ?>" width="300">
         <?php endif; ?>
     </body>
 </html>
