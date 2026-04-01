@@ -8,8 +8,41 @@ if (!isset($_POST['id'])) {
     exit;
 }
 
-if (empty($_POST['title']) || empty($_POST['date']) || empty($_POST['body']) || empty($_POST['category'])) {
-    die("All fields are required.");
+// Server side validation
+$errors = [];
+
+// Title validation
+if (empty($_POST['title'])) {
+    $errors[] = "Title is required.";
+} elseif (strlen($_POST['title']) < 3) {
+    $errors[] = "Title must be at least 3 character.";
+}
+
+// Date validation
+if (empty($_POST['date']) || !strtotime($_POST['date'])) {
+    $errors[] = "A valid date is required.";
+}
+
+// Body validation
+if (empty($_POST['body'])) {
+    $errors[] = "Body is required.";
+} elseif (strlen($_POST['body']) < 10) {
+    $errors[] = "Body must be at least 10 characters.";
+}
+
+// Category validation
+if (empty($_POST['category'])) {
+    $errors[] = "Category is required.";
+} elseif (!preg_match('/^[A-Za-z0-9 ]+$/', $_POST['category'])) {
+    $errors[] = "Category contains invalid characters.";
+}
+
+// If there are errors, show them and stop
+if (!empty($errors)) {
+    foreach($errors as $e) {
+        echo "<p>$e</p>";
+    }
+    exit;
 }
 
 // Collect form data
