@@ -1,5 +1,6 @@
-<?php// Load header and database connection
-require 'connect.php'
+<?php
+// Load header and database connection
+require 'connect.php';
 require 'header.php';
 
 // Start the session (needed for login checks later)
