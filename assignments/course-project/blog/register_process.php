@@ -23,7 +23,7 @@ if (empty($_POST['email'])) {
 }
 
 // Password validation
-if (empty(($_POST['password'])) {
+if (empty($_POST['password'])) {
     $errors[] = "Password is required.";
 } elseif (strlen($_POST['password']) < 6) {
     $errors[] = "Password must be at least 6 characters.";
