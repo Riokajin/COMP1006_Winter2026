@@ -1,8 +1,18 @@
 <?php
 // Connect to the database and load the header
-include 'connect.php';
-include 'header.php';
+require 'connect.php';
+
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+require 'header.php';
 ?>
+
 <h1 class="mb-4">Create a New Blog Post</h1>
 
 <form action="store.php" method="POST" class="mb-5">

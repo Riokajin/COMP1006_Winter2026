@@ -13,6 +13,13 @@
 // Connect to the database
 include 'connect.php';
 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loging.php");
+    exit;
+}
+
 $errors = [];
 
 // Server side validation

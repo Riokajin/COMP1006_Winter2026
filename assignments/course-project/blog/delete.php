@@ -2,6 +2,13 @@
 // Connect to the database
 require 'connect.php';
 
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
 // Ensure an ID was provided
 if (!isset($_GET['id'])) { 
     header("Location: index.php"); 
