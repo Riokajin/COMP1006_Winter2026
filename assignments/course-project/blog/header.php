@@ -23,7 +23,17 @@
                 </li> 
                 <li class="nav-item"> 
                     <a class="nav-link" href="create.php">New Post</a> 
-                </li> 
+                </li>
+                
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                <?php endif; ?>
             </ul> 
         </div> 
     </div> 
