@@ -1,9 +1,7 @@
 <?php
-// Load header and database connection
-require 'connect.php';
-require 'header.php';
 
-// Start the session
+
+// Start session before redirecting (login page is the only page that may redirect before loading header)
 session_start();
 
 // If the user is already logged in, redirect them away from login
@@ -11,6 +9,9 @@ if (isset($_SESSION['user_id'])) {
 header("Location: index.php");
 exit;
 }
+// Load header and database connection
+require 'connect.php';
+require 'header.php';
 ?>
 
 <h1 class="mb-4">Login</h1>
@@ -19,7 +20,7 @@ exit;
 
     <div class="mb-3">
         <label class="form-label">Email:</label>
-        <input type="password" name="email" class="form-control" required>
+        <input type="email" name="email" class="form-control" required>
     </div>
 
     <div class="mb-3">
