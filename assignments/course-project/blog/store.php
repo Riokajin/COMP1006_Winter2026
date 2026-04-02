@@ -78,15 +78,41 @@ $title = $_POST['title'];
 $date = $_POST['date'];
 $body = $_POST['body'];
 $category = $_POST['category'];
+// Image upload handling
+$imageName = null;
 
+if (!empty($_FILES['image']['name'])) {
+
+    // Create upload folder if missing
+    if (!is_dir('uploads')) {
+        mkdir('uploads', 0777, true); //directory name, permissions, and create parent directories if needed
+    }
+
+    $targetDir = "uploads/";
+    $imageName = time() . "_" . basename($_FILES["image"]["name"]);
+    $targetFile = $targetDir . $imageName;
+
+    // Allowed file types
+    $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
+    if (!in_array($_FILES['image']['type'], $allowedTypes)) {
+        die("Invalid file type. Only JPG, PNG, and GIF allowed.");
+    }
+
+    // Move file to uploads folder
+    if (!move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+        die("Error uploading file.");
+    }
+}
 // Insert the new post into the database
-$sql = "INSERT INTO posts (title, date, body, category) VALUES (:title, :date, :body, :category)";
+$sql = "INSERT INTO posts (title, date, body, category, image) VALUES (:title, :date, :body, :category, :image)";
 $stmt = $conn->prepare($sql);
 
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':date', $date);
 $stmt->bindParam(':body', $body);
 $stmt->bindParam(':category', $category);
+$stmt->bindParam(':image', $imageName);
 
 $stmt->execute();
 

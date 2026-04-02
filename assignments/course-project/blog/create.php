@@ -15,7 +15,7 @@ require 'header.php';
 
 <h1 class="mb-4">Create a New Blog Post</h1>
 
-<form action="store.php" method="POST" class="mb-5">
+<form action="store.php" method="POST" enctype="multipart/form-data" class="mb-5">
 
     <div class="mb-3">
         <label class="form-label">Title:</label>
@@ -35,6 +35,11 @@ require 'header.php';
     <div class="mb-3">
         <label class="form-label">Category:</label>
         <input type="text" name="category" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Upload Image:</label>
+        <input type="file" name="image" class="form-control">
     </div>
 
     <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
