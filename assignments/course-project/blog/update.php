@@ -22,7 +22,7 @@ $errors = [];
 if (empty($_POST['title'])) {
     $errors[] = "Title is required.";
 } elseif (strlen($_POST['title']) < 3) {
-    $errors[] = "Title must be at least 3 character.";
+    $errors[] = "Title must be at least 3 characters.";
 }
 
 // Date validation

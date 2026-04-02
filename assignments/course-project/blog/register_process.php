@@ -75,10 +75,10 @@ if ($stmt->fetch()) {
 //Insert the new user
 
 $sql = "INSERT INTO users (name, email, password)
-        VALUES (:name; :email, :password)";
+        VALUES (:name, :email, :password)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bindParam('name', $name);
+$stmt->bindParam(':name', $name);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':password', $hashedPassword);
 
