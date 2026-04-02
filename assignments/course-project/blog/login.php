@@ -32,6 +32,10 @@ require 'header.php';
     <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
 
     <button type="submit" class="btn btn-primary">Login</button>
+    <p class="mt-3">
+        Don't have an account?
+        <a href="register.php">Register here</a>.
+    </p>
 </form>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

@@ -37,6 +37,10 @@ if (isset($_SESSION['user_id'])) {
     <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
 
     <button type="submit" class="btn btn-primary">Create Account</button>
+    <p class="mt-3">
+        Already have an account?
+        <a href="login.php">Log in here</a>.
+    </p>
 </form>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

@@ -1,4 +1,8 @@
 <?php
+
+//update navbar with session info if logged in
+session_start();
+
 // Connect to the database
 require 'connect.php';
 
