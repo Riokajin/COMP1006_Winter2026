@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 /*
     Phase One Review
@@ -59,19 +61,7 @@ if (!empty($errors)) {
 }
 
 
-// reCAPTCHA validation learned how through https://developers.google.com/recaptcha/docs/display and https://developers.google.com/recaptcha/docs/verify
-$recaptcha = $_POST['g-recaptcha-response'];
-if (!$recaptcha) {
-    die("Please complete the reCAPTCHA.");
-}
 
-$secret = "6Ld4umssAAAAABujftEIY88Momzj_PuenYtwkrsw";
-$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptcha");
-$responseData = json_decode($response);
-
-if (!$responseData->success) {
-    die("reCAPTCHA failed.");
-}
 
 // Collect form data
 $title = $_POST['title'];

@@ -34,7 +34,7 @@ if (isset($_SESSION['user_id'])) {
     </div>
 
     <!-- Google reCAPTCHA -->
-    <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
+    <div class="g-recaptcha mb-3" data-sitekey="6LfZ1KksAAAAAHCXP7Afrom8Z5105eAQzBwy9ZOk"></div>
 
     <button type="submit" class="btn btn-primary">Create Account</button>
     <p class="mt-3">

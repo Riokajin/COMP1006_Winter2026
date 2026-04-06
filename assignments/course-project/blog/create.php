@@ -42,11 +42,9 @@ require 'header.php';
         <input type="file" name="image" class="form-control">
     </div>
 
-    <div class="g-recaptcha mb-3" data-sitekey="6Ld4umssAAAAAF49w5Hzc5KZDrPA-_-A4Hj1Fawx"></div>
+    
 
     <button type="submit" class="btn btn-success">Save Post</button>
 </form>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php require 'footer.php'; ?>

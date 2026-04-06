@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
-$dbname = 'blog_cms';
-$username = 'root';
-$password = '';
+$host = '172.31.22.43';
+$dbname = 'Adam100142217';
+$username = 'Adam100142217';
+$password = 'AArOpsPfhZ';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

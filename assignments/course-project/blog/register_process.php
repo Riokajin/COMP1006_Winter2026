@@ -44,7 +44,7 @@ if (!$recaptcha) {
     die("Please complete the reCAPTCHA.");
 }
 
-$secret = "6Ld4umssAAAAABujftEIY88Momzj_PuenYtwkrsw";
+$secret = "6LfZ1KksAAAAANW8pJk1DV93CdgWjj9oCaRt_Lyi";
 $response = file_get_contents(
     "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptcha"
 );
